@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platinum Tools - We're Live at InfoComm!</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-red: #ce202f;
+        --dark-red: #b51a04;
+        --light-gray: #f5f5f5;
+        --dark-gray: #333333;
+        --white: #ffffff;
+        --blue: #0066cc;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Source Sans Pro", Arial, sans-serif;
+        line-height: 1.4;
+        color: var(--dark-gray);
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: var(--white);
+        border: 1px solid #dddddd;
+      }
+
+      /* Header Section */
+      .header {
+        position: relative;
+        padding: 15px;
+        background-color: var(--white);
+      }
+
+      .logo {
+        max-width: 180px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      .header-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 45%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .header-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .header-content {
+        width: 55%;
+        padding-right: 10px;
+      }
+
+      .headline {
+        font-size: 25px;
+        font-weight: 700;
+        color: var(--primary-red);
+        margin-bottom: 8px;
+        line-height: 1.1;
+      }
+
+      .subheadline {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 0;
+      }
+
+      .platinum {
+        color: var(--primary-red);
+        font-weight: 700;
+      }
+
+      .lynn {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .bold {
+        font-weight: 700;
+      }
+
+      /* Main Image */
+      .main-image-container {
+        position: relative;
+      }
+
+      .main-image-container:before,
+      .main-image-container:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background-color: var(--primary-red);
+        z-index: 1;
+      }
+
+      .main-image-container:before {
+        top: 0;
+      }
+
+      .main-image-container:after {
+        bottom: 0;
+      }
+
+      .main-image {
+        width: 100%;
+        height: 200px;
+        display: block;
+        object-fit: cover;
+      }
+
+      /* Section Title */
+      .section-title {
+        color: var(--primary-red);
+        padding-top: 20px;
+        padding-left: 15px;
+        font-size: 25px;
+        font-weight: 700;
+        margin: 0;
+        padding-right: 15px;
+      }
+
+      /* Content Section - Integrated from reference template */
+      .main-content {
+        padding: 15px;
+        background-color: var(--white);
+        position: relative;
+        padding-top: 10px;
+        padding-bottom: 30px;
+      }
+
+      .main-content-wrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .main-content-text {
+        width: 65%;
+      }
+
+      .main-content-image {
+        width: 30%;
+        align-self: flex-start;
+      }
+
+      .main-content-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      h2 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--dark-gray);
+      }
+
+      h2 .red-text {
+        color: var(--primary-red);
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .superscript {
+        font-size: 10px;
+        vertical-align: super;
+      }
+
+      .highlight {
+        color: var(--primary-red);
+        font-weight: 700;
+      }
+
+      .blue-highlight {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .bold-black {
+        font-weight: 700;
+        color: var(--dark-gray);
+      }
+
+      /* Features Section */
+      .features-section {
+        position: relative;
+        margin-top: 25px;
+      }
+
+      .features-heading-container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        margin-bottom: -10px;
+      }
+
+      .features-heading {
+        display: inline-block;
+        background-color: var(--dark-gray);
+        color: var(--white);
+        padding: 8px 15px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .features-grid {
+        background-color: var(--primary-red);
+        padding: 20px 15px 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        width: 32%;
+        padding: 0 5px;
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .feature-item:last-child {
+        border-right: none;
+      }
+
+      .feature-icon {
+        margin-right: 8px;
+        color: var(--white);
+        font-weight: bold;
+        background-color: var(--dark-gray);
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+
+      .feature-text {
+        color: var(--white);
+        font-size: 14px;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 0 15px 15px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .cta-text {
+        width: 60%;
+        padding-right: 15px;
+      }
+
+      .cta-buttons {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--primary-red);
+        color: var(--white);
+        text-decoration: none;
+        padding: 10px 15px;
+        font-weight: 600;
+        text-align: center;
+        clip-path: polygon(0% 20.6%, 99.8% 3.4%, 100% 100%, 0% 80.9%);
+      }
+
+      .cta-link {
+        display: inline-block;
+        background-color: var(--dark-gray);
+        color: var(--white);
+        text-decoration: none;
+        padding: 10px 15px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: -9px;
+
+        clip-path: polygon(0% 0%, 100% 29.4%, 100% 80.9%, 0% 100%);
+      }
+
+      /* Responsive Styles */
+      @media only screen and (max-width: 480px) {
+        .email-container {
+          width: 100%;
+        }
+
+        .header-content {
+          width: 100%;
+          padding-right: 0;
+        }
+
+        .header-image {
+          position: relative;
+          width: 100%;
+          height: 150px;
+          margin-top: 15px;
+        }
+
+        .main-content-wrapper {
+          flex-direction: column;
+        }
+
+        .main-content-text,
+        .main-content-image {
+          width: 100%;
+        }
+
+        .main-content-image {
+          margin-top: 15px;
+          text-align: center;
+        }
+
+        .features-grid {
+          flex-direction: column;
+        }
+
+        .feature-item {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+          padding: 8px 0;
+          margin-bottom: 8px;
+        }
+
+        .feature-item:last-child {
+          border-bottom: none;
+        }
+
+        .cta-section {
+          flex-direction: column;
+        }
+
+        .cta-text,
+        .cta-buttons {
+          width: 100%;
+        }
+
+        .cta-text {
+          padding-right: 0;
+          margin-bottom: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Header Section -->
+      <div class="header">
+        <div class="header-image">
+          <img src="img4.png" alt="InfoComm Exhibition" />
+        </div>
+        <div class="header-content">
+          <img src="2sdfsd.png" alt="Platinum Tools" class="logo" />
+          <h1 class="headline">We're Live at InfoComm!</h1>
+          <p class="subheadline">The show has begun!</p>
+          <p class="subheadline">
+            Meet <span class="platinum">Platinum</span> Tools and
+            <span class="lynn">LYNN</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Main Image -->
+      <div class="main-image-container">
+        <img
+          src="image.png"
+          alt="InfoComm Exhibition Floor"
+          class="main-image"
+        />
+      </div>
+
+      <!-- Section Title -->
+      <h2 class="section-title">The Exhibit Hall is Open — Come See Us!</h2>
+
+      <!-- Content Section - Using main-content-wrapper from reference template -->
+      <div class="main-content">
+        <div class="main-content-wrapper">
+          <div class="main-content-text">
+            <h2>InfoComm 2025 is officially live — and so are we!</h2>
+            <p>
+              Join <span class="highlight">Platinum</span>
+              <span class="bold-black">Tools</span> and
+              <span class="blue-highlight">LYNN</span> at
+              <span class="bold-black">Booth #393</span> and experience our
+              award-winning
+              <span class="bold-black">ezEX RJ45®</span> Connectors in action.
+              Engineered for professional installers, our pass-through
+              connectors simplify the termination process while improving
+              overall performance.
+            </p>
+          </div>
+          <div class="main-content-image">
+            <img src="img3.png" alt="ezEX RJ45 Connectors" />
+          </div>
+        </div>
+
+        <div class="features-section">
+          <div class="features-heading-container">
+            <div class="features-heading">Why visit our Booth?</div>
+          </div>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                Try the ezEX RJ45<sup>®</sup> connector hands-on
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                Ask our experts your toughest cabling questions
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                See how Platinum Tools is helping pros work faster and smarter
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="cta-section">
+        <div class="cta-text">
+          <p>
+            If you're already on the floor, we'd love to meet you. Let's talk
+            about how to improve your installs.
+          </p>
+        </div>
+        <div class="cta-buttons">
+          <a href="#" class="cta-button">Learn More About</a>
+          <a href="#" class="cta-link">ezEX RJ45<sup>®</sup> Connectors</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

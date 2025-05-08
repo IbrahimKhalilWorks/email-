@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platinum Tools - Let's connect at InfoComm</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-red: #ce202f;
+        --dark-red: #b51a04;
+        --light-gray: #f5f5f5;
+        --dark-gray: #333333;
+        --white: #ffffff;
+        --blue: #0066cc;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Source Sans Pro", Arial, sans-serif;
+        line-height: 1.4;
+        color: var(--dark-gray);
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: var(--white);
+        position: relative;
+      }
+
+      .header-and-banner {
+        position: relative;
+      }
+
+      .header {
+        text-align: left;
+        background-color: var(--white);
+        position: relative;
+      }
+
+      .logo {
+        max-width: 120px;
+        height: auto;
+      }
+
+      .banner-container {
+        position: relative;
+        width: 100%;
+      }
+      .banner-container::after {
+        content: "";
+        height: 15px;
+        width: 300px;
+        background: var(--dark-gray);
+        position: absolute;
+        bottom: -12px;
+        left: 0px;
+        clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 0% 100%);
+        z-index: 5;
+      }
+      .banner-container::before {
+        content: "";
+        height: 150px;
+        width: 150px;
+        background: var(--primary-red);
+        position: absolute;
+        bottom: -10px;
+
+        right: 35%;
+        z-index: 5;
+        clip-path: polygon(70% 0%, 80% 0%, 100% 100%, 90% 100%);
+        opacity: 0.8;
+      }
+      .images2 {
+        height: 100px;
+      }
+      .images2 img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .banner-polygon {
+        position: relative;
+        background-color: var(--primary-red);
+        color: var(--white);
+        padding: 15px;
+        width: 60%;
+        clip-path: polygon(0 0, 88% 0, 100% 100%, 0 100%);
+        z-index: 2;
+      }
+
+      .banner-image-container {
+        position: absolute;
+        top: 10px;
+
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        clip-path: polygon(
+          54% 0%,
+          100% 0%,
+          100% 30%,
+          100% 70%,
+          100% 100%,
+          8% 100%,
+          36.2% 22.9%,
+          49.4% 22.2%
+        );
+      }
+
+      .banner-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .banner-title {
+        font-size: 34px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        line-height: 38px;
+      }
+
+      .banner-content {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .banner-content h2 {
+        font-size: 16px;
+        color: var(--white);
+        margin-bottom: -10px;
+      }
+
+      .booth-number {
+        font-weight: 700;
+        color: var(--white);
+        background-color: var(--dark-gray);
+        padding: 2px 4px;
+      }
+
+      .main-content {
+        padding: 15px;
+        background-color: var(--white);
+        position: relative;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      .main-content-wrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .main-content-text {
+        width: 65%;
+      }
+
+      .main-content-image {
+        width: 30%;
+        align-self: flex-start;
+      }
+
+      .main-content-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      h2 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--dark-gray);
+      }
+
+      h2 .red-text {
+        color: var(--primary-red);
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .superscript {
+        font-size: 10px;
+        vertical-align: super;
+      }
+
+      .highlight {
+        color: var(--primary-red);
+        font-weight: 700;
+      }
+
+      .blue-highlight {
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .bold-black {
+        font-weight: 700;
+        color: var(--dark-gray);
+      }
+
+      .features-section {
+        margin: 15px 0;
+      }
+
+      .features-heading-container {
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      .features-heading {
+        background-color: var(--dark-gray);
+        color: var(--white);
+        text-align: center;
+        padding: 8px 20px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 600;
+        display: inline-block;
+        position: relative;
+        top: 10px;
+      }
+
+      .features-grid {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--primary-red);
+        padding: 20px 15px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        width: 32%;
+        padding: 0 5px;
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .feature-item:last-child {
+        border-right: none;
+      }
+
+      .feature-icon {
+        margin-right: 8px;
+        color: var(--white);
+        font-weight: bold;
+        background-color: var(--dark-gray);
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+      }
+
+      .feature-text {
+        font-size: 14px;
+        color: var(--white);
+      }
+
+      .bottom-section {
+        display: flex;
+        margin-top: 15px;
+        justify-content: space-between;
+      }
+
+      .bottom-left {
+        width: 40%;
+
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bottom-right {
+        width: 60%;
+      }
+
+      .closing-text {
+        margin-bottom: 15px;
+      }
+
+      .cta-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--primary-red);
+        color: var(--white);
+        text-decoration: none;
+        padding: 8px 12px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 5px;
+        width: 100%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        clip-path: polygon(0% 20.6%, 99.8% 3.4%, 100% 100%, 0% 80.9%);
+      }
+
+      .website-link {
+        margin-top: -10px;
+        display: inline-block;
+        background-color: #000;
+        color: var(--white);
+        text-decoration: none;
+        padding: 6px 10px;
+        font-size: 12px;
+        text-align: center;
+        width: 100%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        clip-path: polygon(0% 0%, 100% 29.4%, 100% 80.9%, 0% 100%);
+      }
+
+      .product-images {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .product-image-large {
+        width: 40%;
+      }
+
+      .product-image-small {
+        width: 60px;
+        height: auto;
+        margin-left: auto;
+      }
+
+      @media only screen and (max-width: 480px) {
+        .email-container {
+          width: 100%;
+        }
+
+        .banner-polygon {
+          width: 100%;
+          clip-path: none;
+        }
+
+        .banner-image-container {
+          position: relative;
+          width: 100%;
+          height: 150px;
+          clip-path: none;
+          margin-top: -20px;
+        }
+
+        .main-content-wrapper {
+          flex-direction: column;
+        }
+
+        .main-content-text,
+        .main-content-image {
+          width: 100%;
+        }
+
+        .main-content-image {
+          margin-top: 15px;
+          text-align: center;
+        }
+
+        .features-grid {
+          flex-direction: column;
+        }
+
+        .feature-item {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+          padding: 8px 0;
+        }
+
+        .feature-item:last-child {
+          border-bottom: none;
+        }
+
+        .bottom-section {
+          flex-direction: column;
+        }
+
+        .bottom-left,
+        .bottom-right {
+          width: 100%;
+        }
+
+        .bottom-right {
+          margin-top: 15px;
+        }
+
+        .product-image-small {
+          margin: 10px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="header-and-banner">
+        <div class="banner-image-container">
+          <img src="rectangle.png" alt="InfoComm Exhibition" />
+        </div>
+
+        <div class="header">
+          <img src="img1.pngsdfsdf" alt="Platinum Tools Logo" class="logo" />
+        </div>
+
+        <div class="banner-container">
+          <div class="banner-polygon">
+            <div class="banner-title">Let's connect at InfoComm</div>
+            <div class="banner-content">
+              <h2>
+                Visit Platinum Tools & LYNN<br />
+                at InfoComm – <span class="booth-number">Booth #3829</span
+                ><br /><br />
+              </h2>
+              Join us in Orlando to explore how ezEX-RJ45®<br />
+              Connectors are redefining professional<br />
+              terminations
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="main-content-wrapper">
+          <div class="main-content-text">
+            <h2>
+              <span class="red-text">
+                Experience Smarter Terminations at InfoComm 2025</span
+              >
+            </h2>
+            <p>
+              <span class="highlight">Platinum</span>
+              <span class="bold-black">Tools</span> and
+              <span class="blue-highlight">LYNN</span> are excited to exhibit at
+              InfoComm 2025, taking place from June 11<span class="superscript"
+                >th</span
+              >
+              to 13<span class="superscript">th</span> at the Orange County
+              Convention Center in Orlando.
+            </p>
+            <p>
+              Stop by <span class="bold-black">Booth #3829</span> and get a
+              hands-on demo of our innovative
+              <span class="bold-black">ezEX-RJ45®</span> Connectors—built for
+              speed, precision, and reliability. Designed to simplify
+              installations while improving performance,
+              <span class="bold-black">ezEX-RJ45®</span> is the connector of
+              choice for network and AV professionals.
+            </p>
+          </div>
+          <div class="main-content-image">
+            <img src="img4.png" alt="Connector Image" />
+          </div>
+        </div>
+
+        <div class="features-section">
+          <div class="features-heading-container">
+            <div class="features-heading">
+              Here's what you'll discover at our booth
+            </div>
+          </div>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">Fast, pass-through terminations</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">Excellent electrical performance</div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div class="feature-text">
+                Consistent, repeatable results across jobs
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-section">
+          <div class="bottom-left">
+            <div class="closing-text">
+              <p>
+                We'd love to connect with you at the show. Whether you're
+                upgrading systems or streamlining your workflows, our team is
+                ready to help you find the right tools for the job.
+              </p>
+            </div>
+            <div class="cta-container">
+              <a href="http://www.platinumtools.com" class="cta-button"
+                >Explore ezEX-RJ45® Connectors</a
+              >
+              <a href="http://www.platinumtools.com" class="website-link"
+                >www.platinumtools.com</a
+              >
+            </div>
+          </div>
+          <div class="bottom-right">
+            <div class="product-images">
+              <div class="images2">
+                <img src="img1.png" alt="product-image" />
+              </div>
+              <img
+                src="img2.png"
+                alt="Platinum Tools Connector"
+                class="product-image-large"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-container">
+      <a href="temp2.html" class="cta-button">click to see other template</a>
+    </div>
+  </body>
+</html>
